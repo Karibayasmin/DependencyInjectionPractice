@@ -4,8 +4,19 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import javax.inject.Inject
 
-class EmailService @Inject constructor(){
-    fun send(to: String, body: String){
+interface NotificationService{
+    fun send(to: String, body: String)
+}
+
+class EmailService @Inject constructor() : NotificationService{
+    override fun send(to: String, body: String){
         Log.e(TAG, "Email sent")
     }
+}
+
+class MessageService @Inject constructor() : NotificationService{
+    override fun send(to: String, body: String) {
+        Log.e(TAG, "Message sent")
+    }
+
 }
