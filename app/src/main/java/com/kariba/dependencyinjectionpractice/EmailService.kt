@@ -14,7 +14,7 @@ class EmailService @Inject constructor() : NotificationService{
     }
 }
 
-class MessageService @Inject constructor() : NotificationService{
+class MessageService : NotificationService{
     override fun send(to: String, body: String) {
         Log.e(TAG, "Message sent")
     }
