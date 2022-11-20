@@ -3,20 +3,23 @@ package com.kariba.dependencyinjectionpractice
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
 @Module
-abstract class NotificationServiceModule {
+class NotificationServiceModule {
 
-    /*@Provides
+    @MessageQualifier
+    @Provides
     fun getMessageService(): NotificationService{
         return MessageService()
-    }*/
+    }
 
-    /*@Provides
+    @Named("email")
+    @Provides
     fun getEmailService(emailService: EmailService): NotificationService{
         return emailService
-    }*/
+    }
 
-    @Binds
-    abstract fun getEmailService(emailService: EmailService) : NotificationService
+    /*@Binds
+    abstract fun getEmailService(emailService: EmailService) : NotificationService*/
 }
