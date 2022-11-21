@@ -2,7 +2,6 @@ package com.kariba.dependencyinjectionpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kariba.dependencyinjectionpractice.di.component.DaggerUserRegistrationComponent
 import com.kariba.dependencyinjectionpractice.di.service.UserRegistrationService
 import javax.inject.Inject
 
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val appComponent = (application as UserApplication).appComponent
 
-        val userRegistrationComponent = DaggerUserRegistrationComponent.factory().create(3, appComponent)
+        val userRegistrationComponent = appComponent.getUserRegistrationComponentFactory().create(3)
         userRegistrationComponent.injectDependency(this)
 
         userRegistrationService.registerUser("karibayasmin@gmail.com", "1234")
