@@ -2,6 +2,7 @@ package com.kariba.dependencyinjectionpractice.di.module
 
 import com.kariba.dependencyinjectionpractice.SQLUserRepository
 import com.kariba.dependencyinjectionpractice.UserRepository
+import com.kariba.dependencyinjectionpractice.di.annotation.ActivityScope
 import com.kariba.dependencyinjectionpractice.di.annotation.ApplicationScope
 import dagger.Binds
 import dagger.Module
@@ -16,6 +17,6 @@ abstract class UserRepositoryModule {
     }*/
 
     @Binds
-    @ApplicationScope
+    @ActivityScope
     abstract fun getSQLRepository(sqlUserRepository: SQLUserRepository) : UserRepository
 }
