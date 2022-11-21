@@ -4,6 +4,7 @@ import com.kariba.dependencyinjectionpractice.SQLUserRepository
 import com.kariba.dependencyinjectionpractice.UserRepository
 import dagger.Binds
 import dagger.Module
+import javax.inject.Singleton
 
 @Module
 abstract class UserRepositoryModule {
@@ -14,5 +15,6 @@ abstract class UserRepositoryModule {
     }*/
 
     @Binds
+    @Singleton
     abstract fun getSQLRepository(sqlUserRepository: SQLUserRepository) : UserRepository
 }
