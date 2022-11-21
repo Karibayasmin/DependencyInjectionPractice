@@ -4,6 +4,7 @@ import com.kariba.dependencyinjectionpractice.EmailService
 import com.kariba.dependencyinjectionpractice.di.annotation.MessageQualifier
 import com.kariba.dependencyinjectionpractice.MessageService
 import com.kariba.dependencyinjectionpractice.NotificationService
+import com.kariba.dependencyinjectionpractice.di.annotation.ApplicationScope
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
@@ -12,7 +13,7 @@ import javax.inject.Singleton
 @Module
 class NotificationServiceModule() {
 
-    @Singleton
+    @ApplicationScope
     @MessageQualifier
     @Provides
     fun getMessageService(retryCount : Int): NotificationService {
