@@ -1,8 +1,9 @@
-package com.kariba.dependencyinjectionpractice
+package com.kariba.dependencyinjectionpractice.di.module
 
+import com.kariba.dependencyinjectionpractice.SQLUserRepository
+import com.kariba.dependencyinjectionpractice.UserRepository
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module
 abstract class UserRepositoryModule {

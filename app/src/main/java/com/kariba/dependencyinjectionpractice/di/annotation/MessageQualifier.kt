@@ -1,4 +1,4 @@
-package com.kariba.dependencyinjectionpractice
+package com.kariba.dependencyinjectionpractice.di.annotation
 
 import java.lang.annotation.Documented
 import java.lang.annotation.Retention
